@@ -14,12 +14,11 @@ action "push to CF" {
   uses = "suhlig/gh-action-cf-push@master"
   env = {
     API_ENDPOINT = "api.example.com"
-    CF_USERNAME = "janedoe"
     CF_ORG = "it-department"
     CF_SPACE = "dev"
     EXTRA_ARGS = ""
   }
-  secrets = ["CF_PASSWORD"]
+  secrets = ["CF_USERNAME", "CF_PASSWORD"]
 }
 ```
 
