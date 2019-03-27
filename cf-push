@@ -7,4 +7,4 @@ cd "${GITHUB_WORKSPACE?}"
 cf api "${API_ENDPOINT?}"
 cf auth # uses CF_USERNAME and CF_PASSWORD
 cf target -o "${CF_ORG?}" -s "${CF_SPACE?}"
-cf push ${EXTRA_ARGS}
+cf push "${EXTRA_ARGS}"
