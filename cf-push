@@ -4,11 +4,7 @@ set -ex
 
 cd "${GITHUB_WORKSPACE?}"
 
-cf login \
-  -a "${API_ENDPOINT?}" \
-  -u "${CF_USER?}" \
-  -p "${CF_PASSWORD?}" \
-  -o "${CF_ORG?}" \
-  -s "${CF_SPACE?}"
-
+cf api "${API_ENDPOINT?}"
+cf auth # uses CF_USERNAME and CF_PASSWORD
+cf target -o "${CF_ORG?}" -s "${CF_SPACE?}"
 cf push ${EXTRA_ARGS}
